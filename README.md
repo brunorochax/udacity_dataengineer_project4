@@ -4,11 +4,11 @@
   <img width="250" src="Images/spark_logo.png">
 </p>
 
-This time, we will help Sparkify to implement an analytics environemnt with Spark, using s3 as storage. We will work with Sparkify data to create a dimensional model and storage it in partitioned parquet format on s3.
+This time, we will help Sparkify to implement an analytics environemnt with Spark, using s3 as storage. We will work with Sparkify data to create a dimensional model and store it in partitioned parquet format on s3.
 
 ## Prerequisites
 
-You'll need to [create an AWS account](https://aws.amazon.com/pt/premiumsupport/knowledge-center/create-and-activate-aws-account/), to create a EMR Cluster.
+You'll need to [create an AWS account](https://aws.amazon.com/pt/premiumsupport/knowledge-center/create-and-activate-aws-account/), to create an EMR Cluster.
 
 *Attention: You should be charged for the services that you use, check the [AWS pricing](https://aws.amazon.com/pt/pricing/) in order to not be surprised while creating your environment.*
 
@@ -20,8 +20,6 @@ You'll be working with two datasets that reside in S3, that was provided by Udac
 
 * Song data: `s3://udacity-dend/song_data`
 * Log Data: `s3://udacity-dend/log_data`
-
-Log data json path: s3://udacity-dend/log_json_path.json
 
 The star schema was created following the same structure of [Sparkify - Project 1](https://github.com/brunorochax/udacity_project1).
 
@@ -64,7 +62,7 @@ ssh -i ~/YOUR_PEM_FILE.pem hadoop@YOUR_MACHINE_IP.us-west-2.compute.amazonaws.co
 
 Then you'll connect on your EMR master node:
 
-<img width="500" src="Images/emr_connected.png">
+<img width="500" src="Images/emr_connected.PNG">
 
 Let's copy our dl.cfg and etl.py in our cluster.
 
