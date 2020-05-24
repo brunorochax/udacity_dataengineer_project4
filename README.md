@@ -36,6 +36,26 @@ AWS_ACCESS_KEY_ID=
 AWS_SECRET_ACCESS_KEY=
 ```
 
+Inside etl.py, change the reference on `output_data`, put a bucket that will be used to store parquet files:
+
+```
+def main():
+    """This is the main method, it will run when this
+    module starts and execute other methods
+    Args:
+        None
+    Returns:
+        None
+    """
+    print('Starting ETL')
+    spark = create_spark_session()
+    input_data = 's3a://udacity-dend/'
+    output_data = 'YOUR_BUCKET_HERE'
+
+    process_song_data(spark, input_data, output_data)
+    process_log_data(spark, input_data, output_data)
+```
+
 After change, copy both files inside a bucket on your AWS Account.
 
 ## Creating EMR Cluster
@@ -48,7 +68,7 @@ Click on "Create cluster" button:
 
 <img width="400" src="Images/create_cluster_button.png">
 
-On next window, use the follow configurations (you could reduce o increase machines size if you want), select key pair that you've created and click on "Create cluster", on bottom of page:
+On next window, use the follow configurations (you could reduce or increase machines size if you want), select key pair that you've created and click on "Create cluster", on bottom of page:
 
 <img width="600" src="Images/cluster_configuration.png">
 
